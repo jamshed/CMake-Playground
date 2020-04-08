@@ -14,12 +14,11 @@ option(USE_MYMATH "Use the custom math library implementation" ON)
 configure_file(Hello_CMake_Config.h.in Hello_CMake_Config.h)
 
 # If the `USE_MYMATH` option is found `ON`, then add the `MathFunctions`
-# library to the `EXTRA_LIBS` list, and add the corresponding sources to
-# the `EXTRA_INCLUDES` list
+# library to the `EXTRA_LIBS` list
 if(USE_MYMATH)
     add_subdirectory(MathFunctions)
     list(APPEND EXTRA_LIBS MathFunctions)
-    list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
+    # list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
 endif()
 
 # Add the executable
@@ -31,5 +30,5 @@ target_link_libraries(hello_cmake PUBLIC ${EXTRA_LIBS})
 # so add the directory to the list of paths to search for include files.
 target_include_directories(hello_cmake PUBLIC
                             "${PROJECT_BINARY_DIR}"
-                            "${EXTRA_INCLUDES}"
+                            # "${EXTRA_INCLUDES}"
                         )
