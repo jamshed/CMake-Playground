@@ -1,3 +1,4 @@
 // Configured options and settings for the project
 #define Hello_CMake_VERSION_MAJOR @hello_cmake_VERSION_MAJOR@
 #define Hello_CMake_VERSION_MINOR @hello_cmake_VERSION_MINOR@
+#cmakedefine USE_MYMATH

@@ -3,6 +3,10 @@
 
 #include "Hello_CMake_Config.h"
 
+#ifdef USE_MYMATH
+    #include "MathFunctions.h"
+#endif
+
 
 int main(int argc, char **argv)
 {
@@ -18,7 +22,12 @@ int main(int argc, char **argv)
 
 
     const double input_val = std::stod(argv[1]);
-    const double root = sqrt(input_val);
+    
+    #ifdef USE_MYMATH
+        const double root = my_sqrt(input_val);
+    #else
+        const double root = sqrt(input_val);
+    #endif
 
     std::cout << "Square_Root (" << input_val << ") = " << root << "\n";
 
