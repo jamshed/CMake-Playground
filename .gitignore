@@ -13,4 +13,4 @@ CTestTestfile.cmake
 _deps
 
 # Misc.
-build/
+*build/
