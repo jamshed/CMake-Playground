@@ -20,7 +20,7 @@ set(CMAKE_CXX_STANDARD_REQUIED ON)
 
 
 # Bundle the warning flags that we want to pass on to the compiler.
-# 
+# Reference: https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
 set(WARNING_FLAGS -Wall -Wextra)
 
 
