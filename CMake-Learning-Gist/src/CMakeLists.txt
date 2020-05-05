@@ -43,12 +43,3 @@ target_link_libraries(main PRIVATE core)
 install(TARGETS main
         DESTINATION bin
         )
-
-
-# Select a language standard, and set a hard requirement for such if required.
-set_target_properties(main PROPERTIES
-                      C_STANDARD 11
-                      C_STANDARD_REQUIRED ON
-                      CXX_STANDARD 11
-                      CXX_STANDARD_REQUIRED ON
-                      )
