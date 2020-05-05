@@ -19,6 +19,11 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIED ON)
 
 
+# Bundle the warning flags that we want to pass on to the compiler.
+# 
+set(WARNING_FLAGS -Wall -Wextra)
+
+
 # Just printing out the project root directory (a sanity check may be?).
 message("Project root: " ${CMAKE_SOURCE_DIR})
 

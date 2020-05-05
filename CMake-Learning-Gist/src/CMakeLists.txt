@@ -27,12 +27,26 @@ add_library(core STATIC ${PROJECT_SRC})
 target_include_directories(core PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 
+# Specify warnings flags to the compiler for the target library. As the warnings are specified as
+# `PRIVATE`, they will only be used when compiling this library. The flags will not be propagated to
+# the targets linking to it.
+target_compile_options(core PRIVATE ${WARNING_FLAGS})
+
+# This function is used to pass on various flags (compile options) to the compiler, such as
+# warnings, errors, debug info, optimizations etc.
+# TODO: Add some debug and optimization flags as example.
+
+
 # Create an executable from the driver program.
 add_executable(main main.cpp)
 
 
 # Link the executable to the required libraries.
 target_link_libraries(main PRIVATE core)
+
+
+# Specify warnings flags to the compiler for the target executable.
+target_compile_options(main PRIVATE ${WARNING_FLAGS})
 
 
 # Set the parent directory for the target binaries as `bin` directory inside the "installation directory".
