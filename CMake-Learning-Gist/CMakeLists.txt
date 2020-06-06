@@ -16,7 +16,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Bundle the warning flags that we want to pass on to the compiler.
