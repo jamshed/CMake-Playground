@@ -18,6 +18,12 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# The language standard can still be set to some platform-specific standard of the same version, e.g.
+# instead of `-std=c++11`, `-std=gnu++11` might be used in the compilation. The `CMAKE_CXX_EXTENSIONS`
+# flag governs whether this can be done, and the default behavior is for C++ extensions to be enabled.
+# For broader compatibility across compilers and OS, projects should prefer to explicitly disable them.
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 
 # Bundle the warning flags that we want to pass on to the compiler.
 # Reference: https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
