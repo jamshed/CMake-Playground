@@ -38,15 +38,15 @@ target_compile_options(core PRIVATE ${WARNING_FLAGS})
 
 
 # Create an executable from the driver program.
-add_executable(main main.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 
 
 # Link the executable to the required libraries.
-target_link_libraries(main PRIVATE core)
+target_link_libraries(${PROJECT_NAME} PRIVATE core)
 
 
 # Specify warnings flags to the compiler for the target executable.
-target_compile_options(main PRIVATE ${WARNING_FLAGS})
+target_compile_options(${PROJECT_NAME} PRIVATE ${WARNING_FLAGS})
 
 
 # Set the parent directory for the target binaries as `bin` directory inside the "installation directory".
@@ -54,6 +54,6 @@ target_compile_options(main PRIVATE ${WARNING_FLAGS})
 # those are automatically available to users. You may need root access (use `sudo`) for such.
 # To specify a different parent installation directory, pass the directory as the value of the
 # `-DCMAKE_INSTALL_PREFIX` with the `cmake` command.
-install(TARGETS main
+install(TARGETS ${PROJECT_NAME}
         DESTINATION bin
         )

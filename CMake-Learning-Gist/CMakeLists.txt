@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.14)
 
 
 # Name the project, its version, and languages used in it.
-project(cmake_learning_gist
+set(PROJECT_NAME cmake_learning_gist)
+project(${PROJECT_NAME}
         VERSION 0.1.0
         LANGUAGES C CXX
     )
