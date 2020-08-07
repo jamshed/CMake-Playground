@@ -54,6 +54,13 @@ target_compile_options(${PROJECT_NAME} PRIVATE ${WARNING_FLAGS})
 # those are automatically available to users. You may need root access (use `sudo`) for such.
 # To specify a different parent installation directory, pass the directory as the value of the
 # `-DCMAKE_INSTALL_PREFIX` with the `cmake` command.
+
+set(DEFAULT_INSTALL_DIR ${CMAKE_SOURCE_DIR}/bin)        # Set our default installation directory as a `bin` directory inside the top level of the source tree.
+set(INSTALL_DIR .)      # Set the installation directory to what CMake has recieved, i.e. either the system default or the user-provided one.
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT) # If it's set to the system default, then set it to our defined default directory.
+        set(INSTALL_DIR ${DEFAULT_INSTALL_DIR})
+endif()
+
 install(TARGETS ${PROJECT_NAME}
-        DESTINATION bin
+        DESTINATION ${INSTALL_DIR}
         )
