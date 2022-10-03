@@ -39,6 +39,19 @@ set(SUPPRESS_WARNING_FLAGS -Wno-unknown-pragmas)
 set(OPTIMIZE_FLAGS -funroll-loops)
 
 
+# Add required preprocessor definitions (`#define`s) to pass on.
+# E.g. to pass a ``boolean''-type definition `FLAG`, use e.g. `cmake -DFLAG=ON ..`.
+# `ON` is a placeholder here—anything will do.
+if(FLAG)
+    add_compile_definitions(FLAG)
+endif()
+
+# To pass on preprocessor definitions with values, use e.g. `cmake -DMAX_N=19 ..`.
+if(MAX_N)
+    add_compile_definitions(MAX_N=${MAX_N})
+endif()
+
+
 # Just printing out the project root directory (a sanity check may be?).
 message("Project root: " ${CMAKE_SOURCE_DIR})
 
