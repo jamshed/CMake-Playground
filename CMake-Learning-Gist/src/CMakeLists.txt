@@ -27,10 +27,10 @@ add_library(core STATIC ${PROJECT_SRC})
 target_include_directories(core PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 
-# Specify warnings flags to the compiler for the target library. As the warnings are specified as
+# Specify various flags to the compiler for the target library. As the flags are specified as
 # `PRIVATE`, they will only be used when compiling this library. The flags will not be propagated to
 # the targets linking to it.
-target_compile_options(core PRIVATE ${WARNING_FLAGS})
+target_compile_options(core PRIVATE ${WARNING_FLAGS} ${SUPPRESS_WARNING_FLAGS} ${OPTIMIZE_FLAGS})
 
 # This function is used to pass on various flags (compile options) to the compiler, such as
 # warnings, errors, debug info, optimizations etc.

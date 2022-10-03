@@ -30,6 +30,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Reference: https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
 set(WARNING_FLAGS -Wall -Wextra)
 
+# Suppress some unwanted warning flags from passing on to the compiler.
+set(SUPPRESS_WARNING_FLAGS -Wno-unknown-pragmas)
+
+# Bundle the extra optimization flags (not associated with the `-O` levels)
+# that we want to pass on to the compiler.
+# Reference: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
+set(OPTIMIZE_FLAGS -funroll-loops)
+
 
 # Just printing out the project root directory (a sanity check may be?).
 message("Project root: " ${CMAKE_SOURCE_DIR})
