@@ -1,8 +1,18 @@
 #include "factorial/factorial.h"
 
+#include <stdio.h>
+
 
 uint64_t factorial(int num)
 {
+#ifdef MAX_N
+    if(num > MAX_N)
+    {
+        printf("Provided value cannot be larger than %d (fixed at compile-time).\n");
+        return 0;
+    }
+#endif
+
     if(num < 0)
         return 0;
 
