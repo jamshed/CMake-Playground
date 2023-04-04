@@ -52,6 +52,14 @@ if(MAX_N)
 endif()
 
 
+# Search for the required libraries to link against.
+# E.g. determine the thread library of the system.
+include(FindThreads)
+if(NOT Threads_FOUND)
+    message(FATAL_ERROR "A supported threads library is required. Aborting.")
+endif()
+
+
 # Just printing out the project root directory (a sanity check may be?).
 message("Project root: " ${CMAKE_SOURCE_DIR})
 

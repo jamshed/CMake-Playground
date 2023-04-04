@@ -41,6 +41,9 @@ target_compile_options(core PRIVATE ${WARNING_FLAGS} ${SUPPRESS_WARNING_FLAGS} $
 add_executable(${PROJECT_NAME} main.cpp)
 
 
+# Link the core library to other required libraries, e.g. the threads library.
+target_link_libraries(core PRIVATE Threads::Threads)
+
 # Link the executable to the required libraries.
 target_link_libraries(${PROJECT_NAME} PRIVATE core)
 
