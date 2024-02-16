@@ -56,12 +56,9 @@ if(MAX_N)
 endif()
 
 
-# Search for the required libraries to link against.
-# E.g. determine the thread library of the system.
-include(FindThreads)
-if(NOT Threads_FOUND)
-    message(FATAL_ERROR "A supported threads library is required. Aborting.")
-endif()
+# Search the file system for the appropriate threads package for this platform.
+find_package(Threads REQUIRED)
+
 
 
 # Just printing out the project root directory (a sanity check may be?).
