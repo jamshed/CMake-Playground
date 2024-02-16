@@ -32,9 +32,10 @@ target_include_directories(core PUBLIC ${CMAKE_SOURCE_DIR}/include)
 # the targets linking to it.
 target_compile_options(core PRIVATE ${WARNING_FLAGS} ${SUPPRESS_WARNING_FLAGS} ${OPTIMIZE_FLAGS})
 
-# This function is used to pass on various flags (compile options) to the compiler, such as
-# warnings, errors, debug info, optimizations etc.
-# TODO: Add some debug and optimization flags as example.
+# Optionally provide flags for debug-info symbols.
+if(DEBUG_INFO)
+    target_compile_options(core PRIVATE ${DEBUG_FLAGS})
+endif()
 
 
 # Create an executable from the driver program.

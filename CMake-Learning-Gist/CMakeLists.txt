@@ -38,6 +38,10 @@ set(SUPPRESS_WARNING_FLAGS -Wno-unknown-pragmas)
 # Reference: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 set(OPTIMIZE_FLAGS -funroll-loops)
 
+# Bundle debugging information flags that we want to conditionally
+# pass on to the compiler.
+set(DEBUG_FLAGS -ggdb)
+
 
 # Add required preprocessor definitions (`#define`s) to pass on.
 # E.g. to pass a ``boolean''-type definition `FLAG`, use e.g. `cmake -DFLAG=ON ..`.
